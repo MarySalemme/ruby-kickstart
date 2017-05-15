@@ -13,6 +13,4 @@ def pirates_say_arrrrrrrrr(string)
         end
     end
     ary2.join
-            
-    
 end
