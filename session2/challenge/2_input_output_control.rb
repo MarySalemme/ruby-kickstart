@@ -20,20 +20,21 @@
 
 def hi_hi_goodbye
     puts "Give me a number"
-    num = gets.chomp
+    num = gets
         while num.downcase != "bye" 
             puts "hi "*num.to_i
             puts "Give me a number"
             num = gets.chomp
-            break if num.downcase == "bye" 
+            break if num.chomp == "bye" 
         end
-        return "goodbye"
+        puts "goodbye"
 end 
 
 
 
 
-# This will just invoke the method if you run this program directly
+# This will just invoke the method if you run this program 
+#directly
 # This way you can try it out by running "$ ruby 2_input_output_control.rb" 
 # but it will still work for our tests
 hi_hi_goodbye if $0 == __FILE__
