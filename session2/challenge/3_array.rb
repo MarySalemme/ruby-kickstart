@@ -7,5 +7,25 @@
 
 class String
   def every_other_char
+    return self if self.empty?
+    array = []
+    self.split(//).each_with_index do |value, i| 
+      if i.even?
+        array.push(value)
+      end
+    end
+    return array.join
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+  
