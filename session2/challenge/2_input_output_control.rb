@@ -20,14 +20,13 @@
 
 def hi_hi_goodbye
     puts "Give me a number"
-    num = gets
-        while num.downcase != "bye" 
-            puts "hi "*num.to_i
-            puts "Give me a number"
-            num = gets.chomp
-            break if num.chomp == "bye" 
-        end
-        puts "goodbye"
+    num = gets.chomp
+    while num.downcase != "bye" 
+        puts "hi "*num.to_i
+        puts "Give me a number"
+        num = gets.chomp
+    end
+    puts "goodbye"
 end 
 
 
