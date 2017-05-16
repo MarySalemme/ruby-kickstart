@@ -19,8 +19,16 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
-end
+    puts "Give me a number"
+    num = gets.chomp
+        while num.downcase != "bye" 
+            puts "hi "*num.to_i
+            puts "Give me a number"
+            num = gets.chomp
+            break if num.downcase == "bye" 
+        end
+        return "goodbye"
+end 
 
 
 
