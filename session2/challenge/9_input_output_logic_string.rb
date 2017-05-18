@@ -27,15 +27,12 @@ def deaf_grandma
     while true
     input = gets.chomp
     
-        if input == "BYE"
-            puts "BYE SWEETIE"
-            break
-        end
-    
-        if input != input.upcase
-            puts "HUH?! SPEAK UP, SONNY!"
+        break if input == "BYE"
+        
+        if input != input.upcase || input == ""
+            puts "HUH?! SPEAK UP, SONNY!" 
         else
-            puts "NO, NOT SINCE 19" + rand(10..99).to_s + "!"
+            puts "NO, NOT SINCE 1938!"    
         end
     end
 end
