@@ -26,10 +26,3 @@ class Person
         @age += 1
     end
 end
-
-# nino = Person.new("Nino", 25)
-# nino.get_name
-# nino.get_age
-# nino.birthday
-# nino.birthday
-# nino.birthday
