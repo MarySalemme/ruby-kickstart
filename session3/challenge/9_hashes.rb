@@ -29,4 +29,17 @@
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
 def shared(a, b)
+    first_set = Hash.new {|this_hash, key| this_hash[key] = [nil, nil]}
+    
+    a.each do |number|
+        first_set[number][0] = true 
+    end
+    
+    b.each do |number|
+        first_set[number][1] = true 
+    end
+    
+    [first_set, a & b]
 end
+
+p shared [1,2,3], [1,2,4] 
