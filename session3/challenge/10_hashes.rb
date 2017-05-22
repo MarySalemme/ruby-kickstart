@@ -31,24 +31,15 @@
 
 def pathify(paths = Hash.new) #default value
     
-    return paths.map { |path| "/" + path} if paths.is_a? Array
+    return paths.map { |path| "/" + path} if paths.is_a? Array #never executed at the first round
     
     folder_structure = []
     paths.each do |parent_path,child_dirs|
         parent_path = "/" + parent_path
-        child_paths = pathify child_dirs
+        child_paths = pathify child_dirs #recursion
         child_paths.each do |child_path|
             folder_structure << (parent_path + child_path)
         end 
-        
-        # if child_dir.is_a? Array
-        #     filename = "/" + child_dir
-        # elsif child_dir.is_a? Hash
-        #     child_dir.each do |key, value|
-                
-        #     end
-        # end 
-        
     end
     
     folder_structure
