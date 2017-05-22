@@ -30,7 +30,9 @@
 
 def shared(a, b)
     first_set = Hash.new {|this_hash, key| this_hash[key] = [nil, nil]}
+    
     second_set = []
+    
     a.each do |number|
         first_set[number][0] = true 
     end
