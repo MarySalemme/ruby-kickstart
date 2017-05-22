@@ -17,3 +17,21 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(opposites, *elements)
+    to_be_returned = []
+    elements.each_slice(2) do |first, second|
+        first = !!first
+        second = !!second
+        result = if opposites
+                    first != second
+                 else
+                    first == second
+                 end
+        to_be_returned << result
+    end
+    to_be_returned
+end
+
+#each_slice(n) iterates the following block every n elements
+
+p match_maker false, true,  true   
