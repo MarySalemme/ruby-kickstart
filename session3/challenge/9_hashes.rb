@@ -43,7 +43,7 @@ def shared(a, b)
     
     table_of_elements_hash.each_pair {|key, value| common_values_array << key if value == [true, true]}
     
-    p [table_of_elements_hash, common_values_array]
+    [table_of_elements_hash, common_values_array]
 end
 
 
