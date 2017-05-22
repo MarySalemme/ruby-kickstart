@@ -26,14 +26,29 @@
 
 
 class Person
-  attr_accessor :name
+  attr_accessor :name, :age, :quote
 
-  def initialize(&initializer)
+  def initialize(bio, &initializer)
+    @name = bio[:name]
+    @age = bio[:age]
+    @quote = bio[:quote]
     @initializer = initializer
-    initializer.call self
+    initializer.call self unless initializer == nil
   end
 
   def reinit
     @initializer.call self
   end
+  
 end
+# artist = Person.new do |person|
+#   person.name = "Gionni"
+#   person.age   = 47
+#   person.quote = "Why don't you purify yourself in the waters of Lake Minnetonka?"
+# end
+
+# p artist.name
+# p artist.age
+# p artist.quote
+# artist.name = 'The Artist Formerly Known As Prince'
+# p artist.name
