@@ -5,5 +5,13 @@
 # head = {:data => 1, :next => nil}
 # head = {:data => 2, :next => head}
 #
-# print_list_in_reverse head   # >> "1\n2\n"
+#  head   # >> "1\n2\n"
 
+def print_list_in_reverse(linked_list)
+    return unless linked_list
+    print_list_in_reverse linked_list[:next]
+    puts linked_list[:data]
+end
+
+head = {:data => 1, :next => nil}
+p print_list_in_reverse head

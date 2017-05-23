@@ -38,3 +38,15 @@
 # middle head                        # => 3
 # head = {:data => 6, :next => head}
 # middle head                        # => 3
+
+def list_size(linked_list)
+    return 0 unless linked_list
+    1 + list_size(linked_list[:next])
+end
+
+def middle(linked_list, distance = list_size(linked_list)/2)
+    return linked_list[:data] if distance == 0
+    middle linked_list [:next], (distance - 1)
+end
+head = {:data => 6, :next => head}
+p middle head
